@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Iris Dataset Visualization</h1>
+<p>An interactive scatter plot built with Plotly.</p>
+<div>
+    {{ graph_html | safe }}
+</div>
+{% endblock %}

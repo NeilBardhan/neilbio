@@ -1,0 +1,23 @@
+[build-system]
+requires = ["poetry-core>=1.2"]
+build-backend = "poetry.core.masonry.api"
+
+[project]
+name = "neilbio"
+description = "Flask web app for neilb.io"
+version = "0.0.1"
+authors = [
+	{ name = "neil.bardhan", email = "indraneil.bardhan@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+
+[tool.poetry]
+package-mode = false 
+
+[tool.poetry.dependencies]
+flask = "3.0.3"
+plotly = "5.24.0"
+gunicorn = "23.0.0"
+pandas = "^2.2.0"
+requests = "^2.32.2"
