@@ -11,28 +11,17 @@ help:  ## Print this help message.
 
 .PHONY: poetry
 POETRY_USE_PYTHON ?=
-poetry: require-no-venv-or-project-venv install-poetry poetry.lock ## Create or update a Poetry-based development environment.
+poetry: install-poetry poetry.lock ## Create or update a Poetry-based development environment.
 	@$(call i, Installing project plus its run time and development requirements...)
 	[ -z "$(POETRY_USE_PYTHON)" ] || poetry env use "$(POETRY_USE_PYTHON)"
 	poetry install
-	@$(call i, Poetry setup and installation complete. Run 'poetry shell' or '. .venv/bin/activate' to activate.)
-
-.PHONY: require-no-venv-or-project-venv
-# Require no active conda env. If a virtualenv is active, make sure it belongs to the current project.
-require-no-venv-or-project-venv:
-	@if [ -n "$(CONDA_SHLVL)" ] && [ "$(CONDA_SHLVL)" -gt "0" ]; then \
-		$(call e, A conda environment is currently active. Deactivate before using poetry.); \
-		exit 1; \
-	elif [ "$$(python3 -c 'import sys; print(sys.prefix == sys.base_prefix)')" = "False" ] \
-		&& [ ! "$$(which python)" = "$$(poetry env info --executable)" ]; then \
-		$(call e, A virtual environment which does not belong to the current project is active. Deactivate before using poetry.); \
-		exit 1; \
-	fi
+	@$(call i, Poetry setup and installation complete. Run '. .venv/bin/activate' to activate.)
 
 .PHONY: install-poetry
 install-poetry: ## Install poetry if not already present.
 	$(call i, Installing Poetry...)
 	curl -sSL https://install.python-poetry.org | python3 -
+	poetry --version
 
 poetry.lock: pyproject.toml poetry.toml ## Create or update the lock file.
 	@$(call i, Updating poetry.lock file...)
