@@ -56,3 +56,8 @@ poetry.toml:  ## Create or update local Poetry configuration
 	grep 'virtualenvs.in-project' < poetry.toml || poetry config --local virtualenvs.in-project true
 	grep 'virtualenvs.options.always-copy = true' < poetry.toml \
 		|| poetry config --local virtualenvs.options.always-copy $(POETRY_ALWAYS_COPY)
+
+.PHONY: test
+test: ## Run unit tests.
+	@$(call i, Running tests...)
+	poetry run pytest -c=config/pytest.ini
