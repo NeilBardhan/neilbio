@@ -31,17 +31,8 @@ require-no-venv-or-project-venv:
 
 .PHONY: install-poetry
 install-poetry: ## Install poetry if not already present.
-	@set -e; \
-	if command -v poetry > /dev/null; then \
-		exit 0; \
-	fi; \
-	$(call i, Installing Poetry...); \
-	if command -v brew > /dev/null; then \
-		brew update && brew install poetry; \
-	else \
-		curl -sSL https://install.python-poetry.org | python3 -; \
-	fi
-	poetry --version
+	$(call i, Installing Poetry...)
+	curl -sSL https://install.python-poetry.org | python3 -
 
 poetry.lock: pyproject.toml poetry.toml ## Create or update the lock file.
 	@$(call i, Updating poetry.lock file...)
