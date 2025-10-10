@@ -2,15 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Indraneil Bardhan">
+    <meta name="generator" content="Hugo 0.84.0">
+
     <title>{{ title if title else "Neil Bardhan" }}</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/headers/">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Bootstrap core CSS -->
+<link href=" {{ url_for('static', filename='css/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
 </head>
+
 <body>
-    <nav>
+    <div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+        <span class="fs-4">Neil Bardhan</span>
+      </a>
+
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="{{ url_for('projects') }}" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="{{ url_for('resume') }}" class="nav-link">Resume</a></li>
+        <li class="nav-item"><a href="mailto:indraneil.bardhan@gmail.com" class="nav-link">Contact</a></li>
+      </ul>
+    </header>
+  </div>
+
+    <!-- <nav>
         <a href="{{ url_for('index') }}">Home</a> |
         <a href="{{ url_for('projects') }}">Projects</a> |
         <a href="mailto:indraneil.bardhan@gmail.com">Contact</a>
-    </nav>
+    </nav> -->
     <hr>
     <main>
         {% block content %}{% endblock %}
