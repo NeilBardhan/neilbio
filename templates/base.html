@@ -14,7 +14,9 @@
     <!-- Bootstrap core CSS -->
 <link href=" {{ url_for('static', filename='css/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
 
-    <style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -29,40 +31,51 @@
         }
       }
     </style>
-
 </head>
 
-<body>
-    <div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-        <span class="fs-4">Neil Bardhan</span>
-      </a>
+<body class="d-flex h-100 text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <!-- <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> -->
+    <header class="mb-auto">
+      <div>
+        <h3 class="float-md-start mb-0">Indraneil Bardhan</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Home</a>
+            <a class="nav-link" href="{{ url_for('projects') }}">Projects</a>
+            <a class="nav-link" href="{{ url_for('resume') }}">Resume</a>
+        </nav>
+      </div>
 
-      <ul class="nav nav-pills">
+      <!-- <ul class="nav nav-pills">
         <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link active" aria-current="page">Home</a></li>
         <li class="nav-item"><a href="{{ url_for('projects') }}" class="nav-link">Projects</a></li>
         <li class="nav-item"><a href="{{ url_for('resume') }}" class="nav-link">Resume</a></li>
         <li class="nav-item"><a href="mailto:indraneil.bardhan@gmail.com" class="nav-link">Contact</a></li>
-      </ul>
+      </ul> -->
     </header>
   </div>
 
-    <!-- <nav>
-        <a href="{{ url_for('index') }}">Home</a> |
-        <a href="{{ url_for('projects') }}">Projects</a> |
-        <a href="mailto:indraneil.bardhan@gmail.com">Contact</a>
-    </nav> -->
-    <hr>
-    <main>
+    <!-- <hr> -->
+    <div class="full-width-bar"></div>
+    <main class="px-3">
         {% block content %}{% endblock %}
     </main>
 </body>
 
-<footer class="footer mt-auto py-3 bg-light">
+<footer class="footer mt-auto py-3 text-white-50">
   <div class="footer-container">
-    <span class="text-muted">TODO: Add github, linkedin, mail logos here with links</span>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/neilbardhan" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/neilbardhan" target="_blank" class="github" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:indraneil.bardhan@gmail.com" class="mail" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+    <span class="text-muted">© 2025 Indraneil Bardhan</span>
   </div>
 </footer>
 
