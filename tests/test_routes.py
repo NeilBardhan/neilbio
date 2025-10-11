@@ -16,3 +16,8 @@ def test_projects_page(client):
     response = client.get("/projects")
     assert response.status_code == 200
     assert b"Projects" in response.data
+
+def test_resume_page(client):
+    response = client.get("/resume")
+    assert response.status_code == 200
+    assert b"Resume" in response.data

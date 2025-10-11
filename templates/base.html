@@ -2,18 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Indraneil Bardhan">
+    <meta name="generator" content="Hugo 0.84.0">
+
     <title>{{ title if title else "Neil Bardhan" }}</title>
+    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/headers/"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Bootstrap core CSS -->
+<link href=" {{ url_for('static', filename='css/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
 </head>
-<body>
-    <nav>
-        <a href="{{ url_for('index') }}">Home</a> |
-        <a href="{{ url_for('projects') }}">Projects</a> |
-        <a href="mailto:indraneil.bardhan@gmail.com">Contact</a>
-    </nav>
-    <hr>
-    <main>
+
+<body class="d-flex h-100 text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <h3 class="float-md-start mb-0">Indraneil Bardhan</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link {% if request.endpoint == 'index' %}active{% endif %}" href="{{ url_for('index') }}">Home</a>
+            <a class="nav-link {% if request.endpoint == 'projects' %}active{% endif %}" href="{{ url_for('projects') }}">Projects</a>
+            <a class="nav-link {% if request.endpoint == 'resume' %}active{% endif %}" href="{{ url_for('resume') }}">Resume</a>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+    <main class="px-3">
         {% block content %}{% endblock %}
     </main>
 </body>
+
+<footer class="footer mt-auto py-3 text-white-50">
+  <div class="footer-container">
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/neilbardhan" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/neilbardhan" target="_blank" class="github" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:indraneil.bardhan@gmail.com" class="mail" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+    <span class="text-muted">© 2025 Indraneil Bardhan</span>
+  </div>
+</footer>
+
 </html>

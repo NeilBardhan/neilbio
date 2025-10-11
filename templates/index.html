@@ -1,23 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Neil Bardhan</h1>
+<div class="full-width-bar"></div>
+<p></p>
+<p></p>
+<p></p>
 
-<div class="image-cropper">
- 	<!-- <div class="w3-card-4"> -->
- 		<!-- <img src="/static/img/DSCF5812.jpg" alt="picture"> -->
- 	<!-- </div> -->
- 	<!-- <img id="main" src="/static/img/DSCF5812.jpg" alt="Photo" style="float:left;width:196px;height:350px;margin-right: 30px;margin-bottom: 30px;"> -->
-	<!-- <img src = "/static/img/DSCF5812.jpg" alt = "Photo" class="rounded">  -->
-</div>
+<svg class="bd-placeholder-img rounded-circle" width="200" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 200x200" preserveAspectRatio="xMidYMid slice" focusable="false">
+    <rect width="100%" height="100%" fill="#777"></rect>
+    <image href="/static/img/DSCF5812.jpg" width="200" height="200" preserveAspectRatio="xMidYMid slice"></image>
+</svg>
 
-<p>Senior Machine Learning Engineer | 8 years experience | San Francisco</p>
+<p></p>
+<p></p>
+<p></p>
+<p class="lead"> Hi! I'm Neil! </p>
 
-<h2>Experience</h2>
-<ul>
-    <li>R4 – Senior Data Scientist</li>
-    <li>R4 – Data Scientist</li>
-</ul>
+<p>I am a San Francisco based <b>senior machine learning engineer</b> working at <a href="https://www.climate.com">Climate</a>, where I help build tools for farmers to analyze their data and optimize their farming operations.</p>
 
-<h2>Education</h2>
-<p>M.S. in Information Science</p>
+<p>I specialize in building end to end machine learning platforms with a focus on maintainabilty, reproducability and scalability.</p>
+
+<p>Have a look at some of my hobby <a href="{{ url_for('projects') }}">projects</a>.</p>
+
+<p>Feel free to check out my <a href="{{ url_for('resume') }}">resume</a>.</p>
+
+<p>I can be reached my <a href="mailto:indraneil.bardhan@gmail.com">email</a>.</p>
+
 {% endblock %}
