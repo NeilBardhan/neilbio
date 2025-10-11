@@ -35,7 +35,6 @@
 
 <body class="d-flex h-100 text-center text-white bg-dark">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <!-- <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> -->
     <header class="mb-auto">
       <div>
         <h3 class="float-md-start mb-0">Indraneil Bardhan</h3>
@@ -45,18 +44,9 @@
             <a class="nav-link" href="{{ url_for('resume') }}">Resume</a>
         </nav>
       </div>
-
-      <!-- <ul class="nav nav-pills">
-        <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="{{ url_for('projects') }}" class="nav-link">Projects</a></li>
-        <li class="nav-item"><a href="{{ url_for('resume') }}" class="nav-link">Resume</a></li>
-        <li class="nav-item"><a href="mailto:indraneil.bardhan@gmail.com" class="nav-link">Contact</a></li>
-      </ul> -->
     </header>
   </div>
 
-    <!-- <hr> -->
-    <div class="full-width-bar"></div>
     <main class="px-3">
         {% block content %}{% endblock %}
     </main>
